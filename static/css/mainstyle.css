@@ -133,6 +133,59 @@ main {
   fill: currentColor;
 }
 
+/* INDEX */
+
+
+.box-descricao {
+  display: grid;
+  grid-template-columns: 1fr 5fr;
+  column-gap: 30px;
+  align-items: center;
+  border-radius: 30px;
+  box-shadow: 0px 4px 5px 0px rgba(0, 0, 0, 0.50);
+  height: 190px;
+  padding: 30px;
+  margin: 20px auto;
+}
+
+.box-descricao p {
+  font-size: 18px;
+}
+
+.botao-index {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 5px
+}
+
+.botao-index h2 {
+  color: var(--turquesa-escuro);
+  font-size: 30px;
+  font-weight: 600;
+}
+
+.botao-index img {
+  margin-top: 10px;
+  width: 70px;
+  transition: all 300ms ease-in-out;
+}
+
+.botao-index .coruja {
+  margin-top: 0;
+  width: 90px;
+}
+
+.botao-index:hover {
+  opacity: 0.8;
+}
+
+.tech-span {
+  color: var(--turquesa-escuro);
+  font-size: 120%;
+  font-weight: 700;
+}
+
 /* GLOSSARIO */
 
 .cabecalho {

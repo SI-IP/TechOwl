@@ -1,5 +1,55 @@
 {% extends 'modelo.html' %} {% block title %}
 <title>TechOwl</title>
 {% endblock %} {% block body %}
-<h1>index</h1>
+
+<section id="index">
+  <div class="box-descricao">
+    <a class="botao-index" href="/">
+      <h2>TechOwl</h2>
+      <img
+        class="coruja"
+        src="{{url_for('static', filename='imagens/coruja.png')}}"
+      />
+    </a>
+    <p>
+      Somos um site de organização de estudos com Glossário e Gerenciador de
+      Tarefas, desenvolvido para a nota final da disciplina de Introdução à
+      Programação ministrada pelo professor Messias Batista na UNIESP.
+    </p>
+  </div>
+
+  <div class="box-descricao">
+    <a class="botao-index" href="/glossario">
+      <h2>Glossário</h2>
+      <img src="../static/imagens/livro.png" />
+    </a>
+    <p>
+      Aqui você encontra alguns termos aprendidos ao longo do primeiro semestre
+      do curso de Sistemas para Internet, do UNIESP.
+    </p>
+  </div>
+
+  <div class="box-descricao">
+    <a class="botao-index" href="/tarefas">
+      <h2>Tarefas</h2>
+      <img src="../static/imagens/check.svg" />
+    </a>
+    <p>
+      Aqui você pode organizar suas tarefas, definir quais são prioridades,
+      excluir, editar e concluir de acordo com suas necessidades.
+    </p>
+  </div>
+
+  <div class="box-descricao">
+    <a class="botao-index" href="/sobre">
+      <h2>Sobre nós</h2>
+      <img src="../static/imagens/pessoas.png" />
+    </a>
+    <p>
+      Conheça a equipe de desenvolvedores do
+      <span class="tech-span">TechOwl</span>.
+    </p>
+  </div>
+</section>
+
 {% endblock %}

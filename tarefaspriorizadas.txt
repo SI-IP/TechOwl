@@ -1,4 +1,4 @@
-projeto flask
 python
 testes
 colocar o estilo dos termos no glossário em uppercase
+projeto flask

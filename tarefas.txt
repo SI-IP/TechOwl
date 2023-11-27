@@ -2,5 +2,6 @@ tarefas
 glossário
 html
 index
-about
-css
+css about
+css tarefas
+trocar ícone de seta por estrela

@@ -2,141 +2,222 @@
 <title>Tarefas</title>
 {% endblock %} {% block body %}
 
-<div id="main-tarefas">
-  <section class="tarefas">
-    {% if prioridades != [] %}
-    <div class="prioridades">
-      <h2>&#9940; COM URGÊNCIA</h2>
-      <ul>
-        {% for tarefa in prioridades %}
-        <li>
-          <div>
-            {% if tarefa in selecionadas %}
-            <a href="/check-up/{{prioridades.index(tarefa)}}" class="checked"
-              ><img src="../static/imagens/check.png" alt="desmarcar"
-            /></a>
-            {% else %}
-            <a href="/check-up/{{prioridades.index(tarefa)}}" class="unchecked"
-              ><img src="../static/imagens/circle.png" alt="marcar"
-            /></a>
-            {% endif %}
-            <span {% if tarefa in selecionadas %}class="okay" {% endif %}
-              >{{tarefa}}</span
+<section class="tarefas">
+  {% if prioridades != [] %}
+  <div class="prioridades">
+    <h2>&#9940; COM URGÊNCIA</h2>
+    <ul>
+      {% for tarefa in prioridades %}
+      <li>
+        <div>
+          {% if tarefa in selecionadas %}
+          <a
+            href="/check-up/{{prioridades.index(tarefa)}}"
+            class="check-box checked"
+            ><svg
+              width="16"
+              height="16"
+              viewBox="0 0 16 16"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
             >
-          </div>
-          <div class="tarefas-botoes">
-            <a href="/retirar-prioridade/{{prioridades.index(tarefa)}}">
-              <button>
-                <img src="../static/imagens/down-arrow.png" alt="" /></button
-            ></a>
-
-            <button class="alterar-tarefa" data-target="popup">
-              <img src="../static/imagens/pngwing.com.png" alt="" />
-            </button>
-            <div class="popup-bg">
-              <div class="popup-conteudo">
-                <form
-                  class="form-alterar"
-                  action="/alterar-up-tarefa/{{prioridades.index(tarefa)}}"
-                  method="POST"
-                >
-                  <input
-                    type="text"
-                    name="novatarefapriorizada"
-                    placeholder="Editar tarefa"
-                    autocomplete="off"
-                  />
-                  <button type="submit">
-                    <img src="../static/imagens/update-icon.svg" alt="update" />
-                  </button>
-                </form>
-              </div>
-            </div>
-
-            <a href="/del-up-tarefa/{{prioridades.index(tarefa)}}">
-              <button>
-                <img src="../static/imagens/icon-lixo.png" alt="" /></button
-            ></a>
-          </div>
-        </li>
-        {% endfor %}
-      </ul>
-    </div>
-    {% endif %}
-
-    <div class="todo">
-      <h2>&#128221; TO DO LIST</h2>
-      <form action="/tarefas" method="POST" id="addtarefa">
-        <input
-          type="text"
-          name="tarefa"
-          placeholder="Adicionar uma tarefa"
-          autocomplete="off"
-          required
-        />
-        <button type="submit">+</button>
-      </form>
-
-      {% if listaDeTarefas == [] and prioridades == [] %}
-      <p>Parabéns! Você não tem tarefas pendentes.</p>
-
-      {% else %}
-      <ul>
-        {% for tarefa in listaDeTarefas %}
-        <li>
-          <div class="tarefa">
-            {% if tarefa in selecionadas %}
-            <a href="/check/{{listaDeTarefas.index(tarefa)}}" class="checked"
-              ><img src="../static/imagens/check.png" alt="desmarcar"
-            /></a>
-            {% else %}
-            <a href="/check/{{listaDeTarefas.index(tarefa)}}" class="unchecked"
-              ><img src="../static/imagens/circle.png" alt="marcar"
-            /></a>
-            {% endif %}
-            <span {% if tarefa in selecionadas %}class="okay" {% endif %}
-              >{{tarefa}}</span
+              <path
+                d="M8 15C11.866 15 15 11.866 15 8C15 4.13401 11.866 1 8 1C4.13401 1 1 4.13401 1 8C1 11.866 4.13401 15 8 15Z"
+                fill="white"
+                stroke="black"
+                stroke-width="1.5"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+              <path d="M4.5 8.34999L6.6 10.45L11.5 5.54999" fill="white" />
+              <path
+                d="M4.5 8.34999L6.6 10.45L11.5 5.54999"
+                stroke="black"
+                stroke-width="1.5"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+            </svg>
+          </a>
+          {% else %}
+          <a
+            href="/check-up/{{prioridades.index(tarefa)}}"
+            class="check-box unchecked"
+            ><svg
+              width="16"
+              height="16"
+              viewBox="0 0 16 16"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
             >
-          </div>
-          <div class="tarefas-botoes">
-            <a
-              href="/priorizar/{{listaDeTarefas.index(tarefa)}}"
-              title="Priorizar esta tarefa"
-              ><button>
-                <img src="../static/imagens/up-arrow.png" alt="" /></button
-            ></a>
-            <button class="alterar-tarefa" data-target="popup">
-              <img src="../static/imagens/pngwing.com.png" alt="" />
-            </button>
-            <div class="popup-bg">
-              <div class="popup-conteudo">
-                <form
-                  class="form-alterar"
-                  action="/alterar-tarefa/{{listaDeTarefas.index(tarefa)}}"
-                  method="POST"
-                >
-                  <input
-                    type="text"
-                    name="novatarefa"
-                    placeholder="Editar tarefa"
-                    autocomplete="off"
-                  />
-                  <button type="submit">ADD</button>
-                </form>
-              </div>
-            </div>
+              <path
+                d="M8 15C11.866 15 15 11.866 15 8C15 4.134 11.866 1 8 1C4.134 1 1 4.134 1 8C1 11.866 4.134 15 8 15Z"
+                stroke="black"
+                stroke-width="1.5"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+            </svg>
+          </a>
+          {% endif %}
+          <span {% if tarefa in selecionadas %}class="okay" {% endif %}
+            >{{tarefa}}</span
+          >
+        </div>
+        <div class="tarefas-botoes">
+          <a href="/retirar-prioridade/{{prioridades.index(tarefa)}}">
+            <button>
+              <img src="../static/imagens/down-arrow.png" alt="" /></button
+          ></a>
 
-            <a href="/del-tarefa/{{listaDeTarefas.index(tarefa)}}"
-              ><button>
-                <img src="../static/imagens/icon-lixo.png" alt="" /></button
-            ></a>
+          <button class="alterar-tarefa" data-target="popup">
+            <img src="../static/imagens/lapis.png" alt="" />
+          </button>
+          <div class="popup-bg">
+            <div class="popup-conteudo">
+              <form
+                class="form-alterar"
+                action="/alterar-up-tarefa/{{prioridades.index(tarefa)}}"
+                method="POST"
+              >
+                <input
+                  type="text"
+                  name="novatarefapriorizada"
+                  placeholder="Editar tarefa"
+                  autocomplete="off"
+                />
+                <button type="submit">
+                  <img src="../static/imagens/update-icon.svg" alt="update" />
+                </button>
+              </form>
+            </div>
           </div>
-        </li>
-        {% endfor %}
-      </ul>
-    </div>
-    {% endif %}
-  </section>
-</div>
+
+          <a href="/del-up-tarefa/{{prioridades.index(tarefa)}}">
+            <button>
+              <img src="../static/imagens/icon-lixo.png" alt="" /></button
+          ></a>
+        </div>
+      </li>
+      {% endfor %}
+    </ul>
+  </div>
+  {% endif %}
+
+  <div class="todo">
+    <h2>&#128221; TO DO LIST</h2>
+    <form action="/tarefas" method="POST" id="addtarefa">
+      <input
+        type="text"
+        name="tarefa"
+        placeholder="Adicionar uma tarefa"
+        autocomplete="off"
+        required
+      />
+      <button type="submit">+</button>
+    </form>
+
+    {% if listaDeTarefas == [] and prioridades == [] %}
+    <p>Parabéns! Você não tem tarefas pendentes.</p>
+
+    {% else %}
+    <ul>
+      {% for tarefa in listaDeTarefas %}
+      <li>
+        <div class="tarefa">
+          {% if tarefa in selecionadas %}
+          <a
+            href="/check/{{listaDeTarefas.index(tarefa)}}"
+            class="check-box checked"
+            ><svg
+              width="16"
+              height="16"
+              viewBox="0 0 16 16"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M8 15C11.866 15 15 11.866 15 8C15 4.13401 11.866 1 8 1C4.13401 1 1 4.13401 1 8C1 11.866 4.13401 15 8 15Z"
+                fill="white"
+                stroke="black"
+                stroke-width="1.5"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+              <path d="M4.5 8.34999L6.6 10.45L11.5 5.54999" fill="white" />
+              <path
+                d="M4.5 8.34999L6.6 10.45L11.5 5.54999"
+                stroke="black"
+                stroke-width="1.5"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+            </svg>
+          </a>
+          {% else %}
+          <a
+            href="/check/{{listaDeTarefas.index(tarefa)}}"
+            class="check-box unchecked"
+          >
+            <svg
+              width="16"
+              height="16"
+              viewBox="0 0 16 16"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M8 15C11.866 15 15 11.866 15 8C15 4.134 11.866 1 8 1C4.134 1 1 4.134 1 8C1 11.866 4.134 15 8 15Z"
+                stroke="black"
+                stroke-width="1.5"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+            </svg>
+          </a>
+          {% endif %}
+          <span {% if tarefa in selecionadas %} class="okay" {% endif %}
+            >{{tarefa}}</span
+          >
+        </div>
+        <div class="tarefas-botoes">
+          <a
+            href="/priorizar/{{listaDeTarefas.index(tarefa)}}"
+            title="Priorizar esta tarefa"
+            ><button>
+              <img src="../static/imagens/up-arrow.png" alt="" /></button
+          ></a>
+          <button class="alterar-tarefa" data-target="popup">
+            <img src="../static/imagens/lapis.png" alt="" />
+          </button>
+          <div class="popup-bg">
+            <div class="popup-conteudo">
+              <form
+                class="form-alterar"
+                action="/alterar-tarefa/{{listaDeTarefas.index(tarefa)}}"
+                method="POST"
+              >
+                <input
+                  type="text"
+                  name="novatarefa"
+                  placeholder="Editar tarefa"
+                  autocomplete="off"
+                />
+                <button class="salvar-btn" type="submit">Salvar</button>
+              </form>
+            </div>
+          </div>
+
+          <a href="/del-tarefa/{{listaDeTarefas.index(tarefa)}}"
+            ><button>
+              <img src="../static/imagens/icon-lixo.png" alt="" /></button
+          ></a>
+        </div>
+      </li>
+      {% endfor %}
+    </ul>
+  </div>
+  {% endif %}
+</section>
 
 {% endblock %}

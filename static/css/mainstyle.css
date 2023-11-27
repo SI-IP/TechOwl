@@ -1,113 +1,501 @@
 /* modelo */
+
 :root {
-    --cor-principal: #338b85;
-    /* --turquesa-escuro: rgb(0, 89, 85); antigo do zap */
-    --turquesa-escuro: rgb(0, 86, 95);
-    --turquesa-claro: #9ce0db;
-    --turquesa-bg: #f3fcfb;
-    --cinza-escuro: #6d6d6d;
-    --cinza-claro: #bdbdbd;
-    --sombra: #338b853a;
+  --cor-principal: #338b85;
+  /* --turquesa-escuro: rgb(0, 89, 85); antigo do zap */
+  --turquesa-escuro: rgb(0, 86, 95);
+  --turquesa-claro: #9ce0db;
+  --turquesa-bg: #f3fcfb;
+  --cinza-escuro: #6d6d6d;
+  --cinza-claro: #bdbdbd;
+  --sombra: #338b853a;
 }
+
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Poppins', sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  background-color: var(--turquesa-bg);
+  display: flex;
+  justify-content: center;
+}
+
+a {
+  text-decoration: none;
+}
+
+.barra-menu {
+  display: flex;
+  background-color: var(--turquesa-escuro);
+  width: 80%;
+  height: 100px;
+  position: fixed;
+  padding: 10px 40px;
+  margin: 0 auto;
+}
+
+.barra-menu nav {
+  position: relative;
+  width: 100%;
+}
+
+.barra-menu a {
+  color: white;
+}
+
+.menu-lista {
+  position: absolute;
+  right: 20px;
+  bottom: 30px;
+  display: flex;
+  gap: 35px;
+  list-style: none;
+  padding-bottom: 3px;
+}
+
+.menu-links {
+  font-size: 20px;
+  font-weight: 600;
+  position: relative;
+  top: 10px;
+  display: block;
+}
+
+.menu-links::after {
+  content: "";
+  position: absolute;
+  top: 40px;
+  left: 50%;
+  width: 0px;
+  height: 1.5px;
+  background: white;
+  transition: all 300ms ease-in-out;
+}
+
+.menu-links:hover::after {
+  left: 5%;
+  width: 90%;
+}
+
+.titulo-principal {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.titulo-principal img {
+  filter: invert(100%) contrast(200%) brightness(100%);
+  width: 70px;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 80%;
+  padding: 130px 30px 80px;
+  background-color: white;
+  box-shadow: 0px 0px 15px 0px rgba(0, 0, 0, 0.4);
+}
+
+#footer {
+  margin-top: 100px;
+  text-align: center;
+  height: 70px;
+  background-color: white;
+}
+
+#footer p {
+  border-top: 1px solid var(--cinza-claro);
+  padding: 20px;
+}
+
+#footer a,
+#footer p {
+  color: var(--cinza-escuro);
+  font-size: 12px;
+}
+
+#footer a:hover {
+  color: var(--cor-principal);
+}
+
+#footer .github-icon {
+  color: var(--cinza-claro);
+}
+
+.github-icon svg,
+.github-icon path {
+  fill: currentColor;
+}
+
+/* GLOSSARIO */
+
+.cabecalho {
+  display: grid;
+  justify-items: center;
+  gap: 15px;
+}
+
+.abc {
+  text-transform: uppercase;
+  padding: 7px;
+  color: var(--turquesa-escuro);
+  font-size: 25px;
+  font-weight: 600;
+}
+
+.abc:hover {
+  color: var(--cor-principal);
+}
+
+.barra-de-pesquisa {
+  margin: 10px 20px;
+  padding: 5px;
+  border: 1px solid var(--cinza-escuro);
+  border-radius: 15px;
+  box-shadow: 0px 2px 3px 0px rgba(0, 0, 0, 0.50);
+  justify-self: end;
+}
+
+.barra-de-pesquisa input {
+  padding: 0 7px;
+  border: none;
+  outline: none;
+}
+
+.barra-de-pesquisa button {
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+  padding: 0 5px;
+}
+
+.barra-de-pesquisa button:hover {
+  filter: opacity(0.5);
+}
+
+.barra-de-pesquisa button img {
+  border: none;
+  width: 14px;
+}
+
+.add-conceitos {
+  display: flex;
+  gap: 10px;
+  margin: 30px auto;
+}
+
+.add-conceitos input {
+  padding: 0 10px;
+  outline: none;
+  border: 1px solid var(--cinza-escuro);
+  box-shadow: 0px 2px 3px 0px rgba(0, 0, 0, 0.50);
+  border-radius: 20px;
+}
+
+.add-conceitos button {
+  border: none;
+  background-color: transparent;
+  padding: 4px;
+  cursor: pointer;
+}
+
+.add-conceitos button:hover {
+  opacity: 0.7;
+}
+
+.glossario {
+  display: grid;
+  row-gap: 15px;
+  padding: 20px;
+}
+
+.glossario h2 {
+  color: var(--turquesa-escuro);
+  text-transform: uppercase;
 
 }
-body {
-    background-color: var(--turquesa-bg);
-    display: flex;
-    justify-content: center;
-    
+
+.glossario-botoes {
+  display: flex;
+  gap: 15px;
+  margin-bottom: 20px;
 }
-.barra-menu {
-    display: flex;
-    background-color: var(--turquesa-escuro);
-    width: 80%;
-    height: 100px;
-    position: fixed;
-    padding: 10px 40px;
-    margin: 0 auto;
+
+.glossario-botoes button img,
+.glossario-botoes button {
+  cursor: pointer;
+  width: 18px;
+  background-color: transparent;
+  border: none;
 }
-.barra-menu nav {
-    position: relative;
-    width: 100%;
+
+.glossario-botoes button img:hover {
+  opacity: 0.5;
 }
-.barra-menu a {
-    color: white;
-    text-decoration: none;
+
+/* POPUP GLOSSARIO */
+
+.alterar-form {
+  width: 500px;
+  height: 40px;
+  margin-bottom: 65px;
+
 }
-.menu-lista {
-    position: absolute;
-    right: 20px;
-    bottom: 30px;
-    display: flex;
-    gap: 35px;
-    list-style: none;
-    padding-bottom: 3px;
+
+.alterar-form input {
+  margin-bottom: 15px;
+  padding: 5px 7px;
+  border: 1px solid var(--cinza-escuro);
+  box-shadow: 0px 2px 3px 0px rgba(0, 0, 0, 0.50);
+  border-radius: 15px;
+  outline: none;
+  align-self: center;
 }
-.menu-links {
-    font-size: 20px;
-    font-weight: 600;
-    position: relative;
-    top: 10px;
-    display: block;
+
+.alterar-form button {
+  display: flex;
+  align-items: center;
+  border: none;
+  width: 15px;
+  margin: 5px;
+  cursor: pointer;
+  background-color: transparent;
+  color: var(--cor-principal);
 }
-.menu-links::after {
-    content:'';
-    position: absolute;
-    top: 40px;
-    left: 50%;
-    width: 0px;
-    height: 1.5px;
-    background: white;
-    transition: all 300ms ease-in-out;
+
+.alterar-form button img:hover {
+  opacity: 0.7;
 }
-.menu-links:hover::after {
-    left: 5%;
-    width: 90%;
+
+
+/* TAREFAS */
+
+.tarefas {
+  display: flex;
+  justify-content: center;
 }
-.titulo-principal {
-    display: flex;
-    align-items: center;
-    gap: 5px;
+
+.tarefas ul {
+  list-style: none;
 }
-.titulo-principal img {
-    filter: invert(100%) contrast(200%) brightness(100%);
-    width: 70px;
+
+.tarefas .tarefa {
+  width: 300px;
 }
-main {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    min-width: 80%;
-    padding: 130px 30px;
-    background-color: white;
-    width: auto;
-    box-shadow: 0px 0px 15px 0px rgba(0, 0, 0, 0.40);
+
+.okay {
+  text-decoration: line-through;
+  color: var(--cinza-escuro);
 }
-#footer {
-    text-align: center;
-    height: 70px;
-    background-color: white;
+
+.check-box {
+  margin-right: 5px;
 }
-#footer p {
-    border-top: 1px solid var(--cinza-claro);
-    padding: 20px;
+
+.checked:hover,
+.unchecked:hover {
+  opacity: 0.5;
 }
-#footer a, #footer p {
-    color: var(--cinza-escuro);
-    text-decoration: none;
-    font-size: 12px;
+
+.tarefas li {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 25px;
 }
-#footer a:hover {
-    color: var(--cor-principal)
+
+.tarefas li:last-child {
+  margin-bottom: 10px;
 }
-#footer .github-icon {
-    color: var(--cinza-claro)
+
+.tarefas li button {
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
 }
-.github-icon svg, .github-icon path {
-    fill: currentColor;
+
+.tarefas li img {
+  width: 15px;
+}
+
+#addtarefa {
+  border: 1px solid var(--cinza-escuro);
+  box-shadow: 0px 2px 3px 0px rgba(0, 0, 0, 0.50);
+  border-radius: 15px;
+  margin: 20px 0 30px;
+  width: 345px;
+  height: 40px;
+  display: inline-block;
+}
+
+#addtarefa input {
+  padding: 0 5px;
+  margin: 10px 8px;
+  border: none;
+  outline: none;
+  width: 300px;
+}
+
+#addtarefa button {
+  border: none;
+  color: var(--cor-principal);
+  background-color: transparent;
+  cursor: pointer;
+  font-size: 1.2em;
+}
+
+#addtarefa button:hover {
+  color: var(--turquesa-claro);
+}
+
+.todo {
+  width: 430px;
+  height: fit-content;
+  margin: 20px;
+}
+
+.todo h2 {
+  margin-bottom: 10px;
+}
+
+.prioridades {
+  width: 430px;
+  margin: 20px 70px 20px 20px;
+}
+
+.prioridades ul {
+  height: fit-content;
+  padding: 20px 20px;
+  border: 1px solid var(--cinza-escuro);
+  border-radius: 20px;
+  box-shadow: 0px 3px 4px 0px rgba(0, 0, 0, 0.50);
+}
+
+.prioridades h2 {
+  margin-bottom: 30px;
+}
+
+.tarefas-botoes {
+  display: flex;
+  align-items: baseline;
+}
+
+.tarefas-botoes img {
+  margin-left: 6px;
+}
+
+.tarefas-botoes button:hover {
+  filter: opacity(0.4);
+}
+
+.popup-bg {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.8);
+  justify-content: center;
+  align-items: center;
+}
+
+.popup-conteudo {
+  display: grid;
+  background: white;
+  padding: 30px;
+  border-radius: 20px;
+}
+
+/* POPUP TAREFAS */
+
+.form-alterar {
+  border: 1px solid var(--cinza-escuro);
+  box-shadow: 0px 2px 3px 0px rgba(0, 0, 0, 0.50);
+  border-radius: 15px;
+  margin: 10px 0;
+  width: 345px;
+  height: 40px;
+  display: inline-block;
+}
+
+.form-alterar input {
+  margin: 10px 5px;
+  padding: 0 5px;
+  border: none;
+  outline: none;
+  width: 300px;
+}
+
+.form-alterar .salvar-btn {
+  margin: 15px 0;
+  border: none;
+  color: var(--cor-principal);
+  background-color: transparent;
+  cursor: pointer;
+  font-size: 1.1em;
+}
+
+.form-alterar .salvar-btn:hover {
+  color: var(--turquesa-escuro);
+  filter: none;
+}
+
+/* SOBRE */
+
+.sobre {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+  justify-items: center;
+  justify-content: center;
+}
+
+.card {
+  justify-self: stretch;
+  width: 250px;
+  border: 1px solid var(--cinza-claro);
+  border-radius: 20px;
+  padding: 10px;
+  box-shadow: 3px 3px 10px 2px var(--sombra);
+  font-size: 0.75em;
+  display: grid;
+  grid-template-rows: [foto] 245px [bio] 205px [links] 60px [fim]5px;
+}
+
+.card img {
+  width: 230px;
+  border-radius: 300px;
+}
+
+.card h4 {
+  margin-top: 5px;
+}
+
+.card p {
+  margin: 5px 0 10px;
+}
+
+.card-links {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.card-links svg,
+.card-links path {
+  fill: currentColor;
+}
+
+.card-links a {
+  color: var(--cinza-escuro);
+  padding: 5px 0;
+}
+
+.card-links a:hover {
+  color: var(--cor-principal);
 }

@@ -2,16 +2,8 @@
 <title>Glossário</title>
 {% endblock %} {% block body %}
 
-<div id="main-glossario">
-  <h1>Glossário</h1>
-
-  <div class="procurar">
-    <div class="alfabeto">
-      {% for letra in "abcdefghijklmnopqrstuvwxyz" %}
-      <a href="#{{letra}}" class="abc">{{letra}}</a>
-      {% endfor %}
-    </div>
-
+<section>
+  <div class="cabecalho">
     <div class="barra-de-pesquisa">
       <form action="/glossario">
         <input
@@ -26,27 +18,51 @@
         </button>
       </form>
     </div>
-  </div>
 
-  <!-- adicionar termos -->
-  <form action="/glossario" method="POST" class="add-conceitos">
-    <input
-      type="text"
-      name="termo"
-      placeholder="Termo"
-      autocomplete="off"
-      required
-    />
-    <input
-      size="40"
-      type="text"
-      name="definicao"
-      placeholder="Definição"
-      autocomplete="off"
-      required
-    />
-    <button type="submit">ADD</button>
-  </form>
+    <div class="procurar">
+      <div class="alfabeto">
+        {% for letra in "abcdefghijklmnopqrstuvwxyz" %}
+        <a href="#{{letra}}" class="abc">{{letra}}</a>
+        {% endfor %}
+      </div>
+    </div>
+
+    <!-- adicionar termos -->
+    <form class="add-conceitos" action="/glossario" method="POST">
+      <input
+        type="text"
+        name="termo"
+        placeholder="Termo"
+        autocomplete="off"
+        required
+      />
+      <input
+        size="40"
+        type="text"
+        name="definicao"
+        placeholder="Definição"
+        autocomplete="off"
+        required
+      />
+      <button type="submit">
+        <svg
+          width="25"
+          height="25"
+          viewBox="0 0 28 28"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M1 14H14M14 14H27M14 14V1M14 14V27"
+            stroke="#00565F"
+            stroke-width="3.5"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          />
+        </svg>
+      </button>
+    </form>
+  </div>
 
   <div class="glossario">
     {% if pesquisa %}
@@ -54,8 +70,11 @@
     {% for termo, descricao in pesquisado.items() %}
     <h2 id="{{termo[0]|lower}}">{{termo}}</h2>
     <p>{{descricao}}</p>
+
     <div class="glossario-botoes">
-      <button class="alterar-conceito" data-target="popup">Editar</button>
+      <button class="alterar-conceito" data-target="popup">
+        <img src="../static/imagens/lapis.png" alt="editar" />
+      </button>
       <div class="popup-bg">
         <div class="popup-conteudo">
           <form
@@ -82,57 +101,61 @@
           </form>
         </div>
       </div>
-      |
-      <form method="POST" action="/deletar/{{termo}}">
-        <input type="hidden" name="confirmacao" id="confirmacao" />
-        <button type="submit" onclick="return confirmarExclusao()">
-          Deletar
-        </button>
-      </form>
-    </div>
-    {% endfor %} {% else %} {% for termo, descricao in glossario %}
-    <h2 id="{{termo[0]|lower}}">{{termo}}</h2>
-    <p>{{descricao}}</p>
-    <div class="glossario-botoes">
-      <button class="alterar-conceito" data-target="popup">Editar</button>
-      <div class="popup-bg">
-        <div class="popup-conteudo">
-          <form
-            class="alterar-form"
-            action="/alterar-termo/{{termo}}"
-            method="POST"
-          >
-            <input
-              type="text"
-              name="novotermo"
-              placeholder="Editar termo"
-              autocomplete="off"
-            />
-            <input
-              type="text"
-              size="35"
-              name="novadefinicao"
-              placeholder="Editar definição"
-              autocomplete="off"
-            />
-            <button type="submit">
-              <img src="../static/imagens/update-icon.svg" alt="update" />
-            </button>
-          </form>
-        </div>
-      </div>
-      |
-      <!-- <a href="/deletar/{{termo}}"><button>Deletar</button></a> -->
 
       <form method="POST" action="/deletar/{{termo}}">
         <input type="hidden" name="confirmacao" id="confirmacao" />
         <button type="submit" onclick="return confirmarExclusao()">
-          Deletar
+          <img src="../static/imagens/icon-lixo.png" alt="deletar" />
         </button>
       </form>
+    </div>
+    {% endfor %} 
+    </div>
+    {% else %} 
+    <div class="glossario">{% for termo, descricao in glossario %}
+    <h2 id="{{termo[0]|lower}}">{{termo}}</h2>
+    <p>{{descricao}}</p>
+
+    <div class="glossario-botoes">
+      <button class="alterar-conceito" data-target="popup">
+        <img src="../static/imagens/lapis.png" alt="editar" />
+      </button>
+      <div class="popup-bg">
+        <div class="popup-conteudo">
+          <form
+            class="alterar-form"
+            action="/alterar-termo/{{termo}}"
+            method="POST"
+          >
+            <input
+              type="text"
+              name="novotermo"
+              placeholder="Editar termo"
+              autocomplete="off"
+            />
+            <input
+              type="text"
+              size="35"
+              name="novadefinicao"
+              placeholder="Editar definição"
+              autocomplete="off"
+            />
+            <button type="submit">
+              <img src="../static/imagens/update-icon.svg" alt="update" />
+            </button>
+          </form>
+        </div>
+      </div>
+      <form method="POST" action="/deletar/{{termo}}">
+        <input type="hidden" name="confirmacao" id="confirmacao" />
+        <button type="submit" onclick="return confirmarExclusao()">
+          <img src="../static/imagens/icon-lixo.png" alt="deletar" />
+        </button>
+      </form>
+    </div>
       {% endfor %} {% endif %}
     </div>
   </div>
-</div>
+</section>
 
 {% endblock %}

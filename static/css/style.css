@@ -55,7 +55,7 @@
 }
 
 .menu-links::after {
-    content:'';
+    content: '';
     position: absolute;
     top: 35px;
     left: 50%;
@@ -176,12 +176,12 @@ h1 {
     margin: 30px auto;
 }
 
-.add-conceitos > input {
+.add-conceitos>input {
     padding: 4px;
     outline: none;
 }
 
-.add-conceitos > button {
+.add-conceitos>button {
     border: none;
     background-color: var(--turquesa-claro);
     padding: 6px;
@@ -212,7 +212,8 @@ h1 {
     text-decoration: line-through;
 }
 
-.checked:hover, .unchecked:hover {
+.checked:hover,
+.unchecked:hover {
     opacity: 0.4;
 }
 
@@ -245,14 +246,14 @@ h1 {
     display: inline-block;
 }
 
-#addtarefa > input {
+#addtarefa>input {
     margin: 10px 8px;
     border: none;
     outline: none;
     width: 300px;
 }
 
-#addtarefa > button {
+#addtarefa>button {
     border: none;
     color: var(--cor-principal);
     background-color: transparent;
@@ -260,7 +261,7 @@ h1 {
     font-size: 1.2em;
 }
 
-#addtarefa > button:hover {
+#addtarefa>button:hover {
     color: var(--turquesa-claro);
 }
 
@@ -334,14 +335,14 @@ h1 {
     display: inline-block;
 }
 
-.form-alterar > input {
+.form-alterar>input {
     margin: 10px 5px;
     border: none;
     outline: none;
     width: 300px;
 }
 
-.form-alterar > button {
+.form-alterar>button {
     border: none;
     color: var(--cor-principal);
     background-color: transparent;
@@ -357,12 +358,12 @@ h1 {
     height: 40px;
 }
 
-.alterar-form > input {
+.alterar-form>input {
     padding: 5px 4px 2px;
     outline: none;
 }
 
-.alterar-form > button {
+.alterar-form>button {
     border: none;
     width: 15px;
     margin-left: 5px;
@@ -371,7 +372,7 @@ h1 {
     color: var(--cor-principal);
 }
 
-.alterar-form > button:hover {
+.alterar-form>button:hover {
     opacity: 0.4;
 }
 

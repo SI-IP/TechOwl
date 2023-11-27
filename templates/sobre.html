@@ -1,100 +1,418 @@
 {% extends 'modelo.html' %} {% block title %}
 <title>TechOwl - Sobre Nós</title>
 {% endblock %} {% block body %}
-<div>
-  <section class="sobre">
-    <div class="card">
-      <img
-        src="{{url_for('static', filename='imagens/ana_clara.jpg')}}"
-        alt="foto-de-ana-clara"
-      />
-      <div>
-        <h4>Ana Clara Barros</h4>
-        <h5>Dev</h5>
-        <p>
-          Bacharel em Psicologia pela Universidade Federal da Paraíba,
-          atualmente estudante de Letras - Inglês na UFPB e de Sistemas para
-          Internet na UNIESP. Cat person, filme adicta e aspirante a
-          desenvolvedora.
-        </p>
-      </div>
-      <div class="card-links">
-        <a href="https://github.com/banaclara" target="_blank">Github</a>
-        <a href="https://www.linkedin.com/in/anaclarabs/" target="_blank"
-          >LinkedIn</a
-        >
-      </div>
+<section class="sobre">
+  <div class="card">
+    <img
+      src="{{url_for('static', filename='imagens/ana_clara.jpg')}}"
+      alt="foto-de-ana-clara"
+    />
+    <div>
+      <h4>Ana Clara Barros</h4>
+      <h5>Dev</h5>
+      <p>
+        Bacharel em Psicologia pela Universidade Federal da Paraíba, atualmente
+        estudante de Letras - Inglês na UFPB e de Sistemas para Internet na
+        UNIESP. Cat person, filme adicta e aspirante a desenvolvedora.
+      </p>
     </div>
+    <div class="card-links">
+      <a href="https://github.com/banaclara" target="_blank">
+        <svg
+          width="40"
+          height="40"
+          viewBox="0 0 54 52"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M26.7353 51C40.9484 51 52.4706 39.807 52.4706 26C52.4706 12.1929 40.9484 1 26.7353 1C12.5221 1 1 12.1929 1 26C1 39.807 12.5221 51 26.7353 51Z"
+            fill="#BDBDBD"
+            stroke="white"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          />
+          <path
+            d="M32.7401 43.5001V38.8426C32.8044 38.0689 32.694 37.2909 32.4158 36.5606C32.1379 35.8304 31.6986 35.1644 31.1275 34.6071C36.5147 34.0391 42.1765 32.1079 42.1765 23.2474C42.176 20.9815 41.2546 18.8027 39.6029 17.1617C40.385 15.1794 40.3297 12.9883 39.4485 11.0436C39.4485 11.0436 37.4239 10.4756 32.7401 13.4454C28.8078 12.4373 24.6628 12.4373 20.7304 13.4454C16.0466 10.4756 14.022 11.0436 14.022 11.0436C13.1408 12.9883 13.0855 15.1794 13.8676 17.1617C12.2036 18.8148 11.2813 21.0134 11.2941 23.2959C11.2941 32.0916 16.9559 34.0229 22.343 34.6556C21.7787 35.2074 21.3433 35.8654 21.0654 36.5869C20.7876 37.3081 20.6734 38.0766 20.7304 38.8426V43.5001"
+            fill="#BDBDBD"
+          />
+          <path
+            d="M32.7401 43.5001V38.8426C32.8044 38.0689 32.694 37.2909 32.4158 36.5606C32.1379 35.8304 31.6986 35.1644 31.1275 34.6071C36.5147 34.0391 42.1765 32.1079 42.1765 23.2474C42.176 20.9815 41.2546 18.8027 39.6029 17.1617C40.385 15.1794 40.3297 12.9883 39.4485 11.0436C39.4485 11.0436 37.4239 10.4756 32.7401 13.4454C28.8078 12.4373 24.6628 12.4373 20.7304 13.4454C16.0466 10.4756 14.022 11.0436 14.022 11.0436C13.1408 12.9883 13.0855 15.1794 13.8676 17.1617C12.2036 18.8148 11.2813 21.0134 11.2941 23.2959C11.2941 32.0916 16.9559 34.0229 22.343 34.6556C21.7787 35.2074 21.3433 35.8654 21.0654 36.5869C20.7876 37.3081 20.6734 38.0766 20.7304 38.8426V43.5001"
+            stroke="white"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          />
+          <path
+            d="M20.7304 40.2545C15.5833 41.8337 11.2941 40.2545 8.72059 35.386Z"
+            fill="#BDBDBD"
+          />
+          <path
+            d="M20.7304 40.2545C15.5833 41.8337 11.2941 40.2545 8.72059 35.386"
+            stroke="white"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          />
+        </svg>
+      </a>
+      <a href="https://www.linkedin.com/in/anaclarabs/" target="_blank">
+        <svg
+          width="44"
+          height="44"
+          viewBox="0 0 44 44"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M42 13.1111V30.8889C42 37.0253 37.0253 42 30.8889 42H13.1111C6.97462 42 2 37.0253 2 30.8889V13.1111C2 6.97462 6.97462 2 13.1111 2H30.8889C37.0253 2 42 6.97462 42 13.1111Z"
+            fill="#BDBDBD"
+            stroke="white"
+            stroke-width="2.5"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          />
+          <path d="M10.8889 33.1111V25.3333V17.5555" fill="#BDBDBD" />
+          <path
+            d="M10.8889 33.1111V25.3333V17.5555"
+            stroke="white"
+            stroke-width="2.5"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          />
+          <path
+            d="M19.7778 33.1111V25.8889ZM19.7778 17.5555V25.8889ZM19.7778 25.8889C19.7778 17.5555 33.1111 17.5555 33.1111 25.8889V33.1111"
+            fill="#BDBDBD"
+          />
+          <path
+            d="M19.7778 33.1111V25.8889M19.7778 25.8889V17.5555M19.7778 25.8889C19.7778 17.5555 33.1111 17.5555 33.1111 25.8889V33.1111"
+            stroke="white"
+            stroke-width="2.5"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          />
+          <path d="M10.8889 10.9111L10.9111 10.8864Z" fill="#BDBDBD" />
+          <path
+            d="M10.8889 10.9111L10.9111 10.8864"
+            stroke="white"
+            stroke-width="2.5"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          />
+        </svg>
+      </a>
+    </div>
+  </div>
 
-    <div class="card">
-      <img
-        src="{{url_for('static', filename='imagens/clara.jpeg')}}"
-        alt="foto-de-clara"
-      />
-      <div>
-        <h4>Clara Ferraz</h4>
-        <h5>Dev-Git</h5>
-        <p>
-          Bacharel em Línguas Estrangeiras Aplicadas às Negociações
-          Internacionais na Universidade Federal da Paraíba. Possui experiência
-          em ensino de inglês, tradução e atendimento ao cliente. Estudando e
-          adquirindo habilidades em desenvolvimento web, especialmente
-          front-end.
-        </p>
-      </div>
-      <div class="card-links">
-        <a href="https://github.com/claraferraz" target="_blank">Github</a>
-        <a href="https://www.linkedin.com/in/claraferraz/" target="_blank"
-          >LinkedIn</a
-        >
-      </div>
+  <div class="card">
+    <img
+      src="{{url_for('static', filename='imagens/clara.jpeg')}}"
+      alt="foto-de-clara"
+    />
+    <div>
+      <h4>Clara Ferraz</h4>
+      <h5>Dev-Git</h5>
+      <p>
+        Bacharel em Línguas Estrangeiras Aplicadas às Negociações Internacionais
+        na UFPB. Possui experiência em ensino de inglês, tradução e atendimento
+        ao cliente. Estudando e adquirindo habilidades em desenvolvimento web,
+        especialmente front-end.
+      </p>
     </div>
+    <div class="card-links">
+      <a href="https://github.com/claraferraz" target="_blank">
+        <svg
+          width="40"
+          height="40"
+          viewBox="0 0 54 52"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M26.7353 51C40.9484 51 52.4706 39.807 52.4706 26C52.4706 12.1929 40.9484 1 26.7353 1C12.5221 1 1 12.1929 1 26C1 39.807 12.5221 51 26.7353 51Z"
+            fill="#BDBDBD"
+            stroke="white"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          />
+          <path
+            d="M32.7401 43.5001V38.8426C32.8044 38.0689 32.694 37.2909 32.4158 36.5606C32.1379 35.8304 31.6986 35.1644 31.1275 34.6071C36.5147 34.0391 42.1765 32.1079 42.1765 23.2474C42.176 20.9815 41.2546 18.8027 39.6029 17.1617C40.385 15.1794 40.3297 12.9883 39.4485 11.0436C39.4485 11.0436 37.4239 10.4756 32.7401 13.4454C28.8078 12.4373 24.6628 12.4373 20.7304 13.4454C16.0466 10.4756 14.022 11.0436 14.022 11.0436C13.1408 12.9883 13.0855 15.1794 13.8676 17.1617C12.2036 18.8148 11.2813 21.0134 11.2941 23.2959C11.2941 32.0916 16.9559 34.0229 22.343 34.6556C21.7787 35.2074 21.3433 35.8654 21.0654 36.5869C20.7876 37.3081 20.6734 38.0766 20.7304 38.8426V43.5001"
+            fill="#BDBDBD"
+          />
+          <path
+            d="M32.7401 43.5001V38.8426C32.8044 38.0689 32.694 37.2909 32.4158 36.5606C32.1379 35.8304 31.6986 35.1644 31.1275 34.6071C36.5147 34.0391 42.1765 32.1079 42.1765 23.2474C42.176 20.9815 41.2546 18.8027 39.6029 17.1617C40.385 15.1794 40.3297 12.9883 39.4485 11.0436C39.4485 11.0436 37.4239 10.4756 32.7401 13.4454C28.8078 12.4373 24.6628 12.4373 20.7304 13.4454C16.0466 10.4756 14.022 11.0436 14.022 11.0436C13.1408 12.9883 13.0855 15.1794 13.8676 17.1617C12.2036 18.8148 11.2813 21.0134 11.2941 23.2959C11.2941 32.0916 16.9559 34.0229 22.343 34.6556C21.7787 35.2074 21.3433 35.8654 21.0654 36.5869C20.7876 37.3081 20.6734 38.0766 20.7304 38.8426V43.5001"
+            stroke="white"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          />
+          <path
+            d="M20.7304 40.2545C15.5833 41.8337 11.2941 40.2545 8.72059 35.386Z"
+            fill="#BDBDBD"
+          />
+          <path
+            d="M20.7304 40.2545C15.5833 41.8337 11.2941 40.2545 8.72059 35.386"
+            stroke="white"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          />
+        </svg>
+      </a>
+      <a href="https://www.linkedin.com/in/claraferraz/" target="_blank"
+        ><svg
+          width="44"
+          height="44"
+          viewBox="0 0 44 44"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M42 13.1111V30.8889C42 37.0253 37.0253 42 30.8889 42H13.1111C6.97462 42 2 37.0253 2 30.8889V13.1111C2 6.97462 6.97462 2 13.1111 2H30.8889C37.0253 2 42 6.97462 42 13.1111Z"
+            fill="#BDBDBD"
+            stroke="white"
+            stroke-width="2.5"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          />
+          <path d="M10.8889 33.1111V25.3333V17.5555" fill="#BDBDBD" />
+          <path
+            d="M10.8889 33.1111V25.3333V17.5555"
+            stroke="white"
+            stroke-width="2.5"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          />
+          <path
+            d="M19.7778 33.1111V25.8889ZM19.7778 17.5555V25.8889ZM19.7778 25.8889C19.7778 17.5555 33.1111 17.5555 33.1111 25.8889V33.1111"
+            fill="#BDBDBD"
+          />
+          <path
+            d="M19.7778 33.1111V25.8889M19.7778 25.8889V17.5555M19.7778 25.8889C19.7778 17.5555 33.1111 17.5555 33.1111 25.8889V33.1111"
+            stroke="white"
+            stroke-width="2.5"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          />
+          <path d="M10.8889 10.9111L10.9111 10.8864Z" fill="#BDBDBD" />
+          <path
+            d="M10.8889 10.9111L10.9111 10.8864"
+            stroke="white"
+            stroke-width="2.5"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          />
+        </svg>
+      </a>
+    </div>
+  </div>
 
-    <div class="card">
-      <img
-        src="{{url_for('static', filename='imagens/guilherme.png')}}"
-        alt="foto-de-guilherme"
-      />
-      <div>
-        <h4>Guilherme Medeiros</h4>
-        <h5>Dev-Scrum</h5>
-        <p>
-          Pai de Gael e marido de Priscilla. Formado em engenharia civil na UFPB
-          em 2011, tentando virar desenvolvedor. Criador de figurinhas para
-          whatsapp e não consigo falar sério no grupo da turma.
-        </p>
-      </div>
-      <div class="card-links">
-        <a href="https://github.com/guimferreira" target="_blank">Github</a>
-        <a href="https://www.linkedin.com/in/guilhermedmf/" target="_blank"
-          >LinkedIn</a
-        >
-      </div>
+  <div class="card">
+    <img
+      src="{{url_for('static', filename='imagens/guilherme.png')}}"
+      alt="foto-de-guilherme"
+    />
+    <div>
+      <h4>Guilherme Medeiros</h4>
+      <h5>Dev-Scrum</h5>
+      <p>
+        Pai de Gael e marido de Priscilla. Formado em Engenharia Civil na UFPB
+        em 2011, tentando virar desenvolvedor. Criador de figurinhas para
+        Whatsapp e não consigo falar sério no grupo da turma.
+      </p>
     </div>
+    <div class="card-links">
+      <a href="https://github.com/guimferreira" target="_blank"
+        ><svg
+          width="40"
+          height="40"
+          viewBox="0 0 54 52"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M26.7353 51C40.9484 51 52.4706 39.807 52.4706 26C52.4706 12.1929 40.9484 1 26.7353 1C12.5221 1 1 12.1929 1 26C1 39.807 12.5221 51 26.7353 51Z"
+            fill="#BDBDBD"
+            stroke="white"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          />
+          <path
+            d="M32.7401 43.5001V38.8426C32.8044 38.0689 32.694 37.2909 32.4158 36.5606C32.1379 35.8304 31.6986 35.1644 31.1275 34.6071C36.5147 34.0391 42.1765 32.1079 42.1765 23.2474C42.176 20.9815 41.2546 18.8027 39.6029 17.1617C40.385 15.1794 40.3297 12.9883 39.4485 11.0436C39.4485 11.0436 37.4239 10.4756 32.7401 13.4454C28.8078 12.4373 24.6628 12.4373 20.7304 13.4454C16.0466 10.4756 14.022 11.0436 14.022 11.0436C13.1408 12.9883 13.0855 15.1794 13.8676 17.1617C12.2036 18.8148 11.2813 21.0134 11.2941 23.2959C11.2941 32.0916 16.9559 34.0229 22.343 34.6556C21.7787 35.2074 21.3433 35.8654 21.0654 36.5869C20.7876 37.3081 20.6734 38.0766 20.7304 38.8426V43.5001"
+            fill="#BDBDBD"
+          />
+          <path
+            d="M32.7401 43.5001V38.8426C32.8044 38.0689 32.694 37.2909 32.4158 36.5606C32.1379 35.8304 31.6986 35.1644 31.1275 34.6071C36.5147 34.0391 42.1765 32.1079 42.1765 23.2474C42.176 20.9815 41.2546 18.8027 39.6029 17.1617C40.385 15.1794 40.3297 12.9883 39.4485 11.0436C39.4485 11.0436 37.4239 10.4756 32.7401 13.4454C28.8078 12.4373 24.6628 12.4373 20.7304 13.4454C16.0466 10.4756 14.022 11.0436 14.022 11.0436C13.1408 12.9883 13.0855 15.1794 13.8676 17.1617C12.2036 18.8148 11.2813 21.0134 11.2941 23.2959C11.2941 32.0916 16.9559 34.0229 22.343 34.6556C21.7787 35.2074 21.3433 35.8654 21.0654 36.5869C20.7876 37.3081 20.6734 38.0766 20.7304 38.8426V43.5001"
+            stroke="white"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          />
+          <path
+            d="M20.7304 40.2545C15.5833 41.8337 11.2941 40.2545 8.72059 35.386Z"
+            fill="#BDBDBD"
+          />
+          <path
+            d="M20.7304 40.2545C15.5833 41.8337 11.2941 40.2545 8.72059 35.386"
+            stroke="white"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          /></svg
+      ></a>
+      <a href="https://www.linkedin.com/in/guilhermedmf/" target="_blank"
+        ><svg
+          width="44"
+          height="44"
+          viewBox="0 0 44 44"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M42 13.1111V30.8889C42 37.0253 37.0253 42 30.8889 42H13.1111C6.97462 42 2 37.0253 2 30.8889V13.1111C2 6.97462 6.97462 2 13.1111 2H30.8889C37.0253 2 42 6.97462 42 13.1111Z"
+            fill="#BDBDBD"
+            stroke="white"
+            stroke-width="2.5"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          />
+          <path d="M10.8889 33.1111V25.3333V17.5555" fill="#BDBDBD" />
+          <path
+            d="M10.8889 33.1111V25.3333V17.5555"
+            stroke="white"
+            stroke-width="2.5"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          />
+          <path
+            d="M19.7778 33.1111V25.8889ZM19.7778 17.5555V25.8889ZM19.7778 25.8889C19.7778 17.5555 33.1111 17.5555 33.1111 25.8889V33.1111"
+            fill="#BDBDBD"
+          />
+          <path
+            d="M19.7778 33.1111V25.8889M19.7778 25.8889V17.5555M19.7778 25.8889C19.7778 17.5555 33.1111 17.5555 33.1111 25.8889V33.1111"
+            stroke="white"
+            stroke-width="2.5"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          />
+          <path d="M10.8889 10.9111L10.9111 10.8864Z" fill="#BDBDBD" />
+          <path
+            d="M10.8889 10.9111L10.9111 10.8864"
+            stroke="white"
+            stroke-width="2.5"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          />
+        </svg>
+      </a>
+    </div>
+  </div>
 
-    <div class="card">
-      <img
-        src="{{url_for('static', filename='imagens/messias.png')}}"
-        alt="foto-de-messias"
-      />
-      <div>
-        <h4>Messias Batista</h4>
-        <h5>Teacher</h5>
-        <p>
-          Geek forjado na década de 90 com formações nas áreas de tecnologia e
-          ciências sociais. Profissional de dados e professor. Tenho 2 filhos
-          maravilhosos, uma esposa que me apoia em tudo, e vários amigos que me
-          ajudam na jornada da vida.
-        </p>
-      </div>
-      <div class="card-links">
-        <a href="https://github.com/mrafaelbatista" target="_blank">Github</a>
-        <a href="https://www.linkedin.com/in/messiasbatista/" target="_blank"
-          >LinkedIn</a
-        >
-      </div>
+  <div class="card">
+    <img
+      src="{{url_for('static', filename='imagens/messias.png')}}"
+      alt="foto-de-messias"
+    />
+    <div>
+      <h4>Messias Batista</h4>
+      <h5>Professor</h5>
+      <p>
+        Geek forjado na década de 90 com formações nas áreas de tecnologia e
+        ciências sociais. Profissional de dados e professor. Tenho 2 filhos
+        maravilhosos, uma esposa que me apoia em tudo, e vários amigos que me
+        ajudam na jornada da vida.
+      </p>
     </div>
-  </section>
-</div>
+    <div class="card-links">
+      <a href="https://github.com/mrafaelbatista" target="_blank"
+        ><svg
+          width="40"
+          height="40"
+          viewBox="0 0 54 52"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M26.7353 51C40.9484 51 52.4706 39.807 52.4706 26C52.4706 12.1929 40.9484 1 26.7353 1C12.5221 1 1 12.1929 1 26C1 39.807 12.5221 51 26.7353 51Z"
+            fill="#BDBDBD"
+            stroke="white"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          />
+          <path
+            d="M32.7401 43.5001V38.8426C32.8044 38.0689 32.694 37.2909 32.4158 36.5606C32.1379 35.8304 31.6986 35.1644 31.1275 34.6071C36.5147 34.0391 42.1765 32.1079 42.1765 23.2474C42.176 20.9815 41.2546 18.8027 39.6029 17.1617C40.385 15.1794 40.3297 12.9883 39.4485 11.0436C39.4485 11.0436 37.4239 10.4756 32.7401 13.4454C28.8078 12.4373 24.6628 12.4373 20.7304 13.4454C16.0466 10.4756 14.022 11.0436 14.022 11.0436C13.1408 12.9883 13.0855 15.1794 13.8676 17.1617C12.2036 18.8148 11.2813 21.0134 11.2941 23.2959C11.2941 32.0916 16.9559 34.0229 22.343 34.6556C21.7787 35.2074 21.3433 35.8654 21.0654 36.5869C20.7876 37.3081 20.6734 38.0766 20.7304 38.8426V43.5001"
+            fill="#BDBDBD"
+          />
+          <path
+            d="M32.7401 43.5001V38.8426C32.8044 38.0689 32.694 37.2909 32.4158 36.5606C32.1379 35.8304 31.6986 35.1644 31.1275 34.6071C36.5147 34.0391 42.1765 32.1079 42.1765 23.2474C42.176 20.9815 41.2546 18.8027 39.6029 17.1617C40.385 15.1794 40.3297 12.9883 39.4485 11.0436C39.4485 11.0436 37.4239 10.4756 32.7401 13.4454C28.8078 12.4373 24.6628 12.4373 20.7304 13.4454C16.0466 10.4756 14.022 11.0436 14.022 11.0436C13.1408 12.9883 13.0855 15.1794 13.8676 17.1617C12.2036 18.8148 11.2813 21.0134 11.2941 23.2959C11.2941 32.0916 16.9559 34.0229 22.343 34.6556C21.7787 35.2074 21.3433 35.8654 21.0654 36.5869C20.7876 37.3081 20.6734 38.0766 20.7304 38.8426V43.5001"
+            stroke="white"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          />
+          <path
+            d="M20.7304 40.2545C15.5833 41.8337 11.2941 40.2545 8.72059 35.386Z"
+            fill="#BDBDBD"
+          />
+          <path
+            d="M20.7304 40.2545C15.5833 41.8337 11.2941 40.2545 8.72059 35.386"
+            stroke="white"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          /></svg
+      ></a>
+      <a href="https://www.linkedin.com/in/messiasbatista/" target="_blank"
+        ><svg
+          width="44"
+          height="44"
+          viewBox="0 0 44 44"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M42 13.1111V30.8889C42 37.0253 37.0253 42 30.8889 42H13.1111C6.97462 42 2 37.0253 2 30.8889V13.1111C2 6.97462 6.97462 2 13.1111 2H30.8889C37.0253 2 42 6.97462 42 13.1111Z"
+            fill="#BDBDBD"
+            stroke="white"
+            stroke-width="2.5"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          />
+          <path d="M10.8889 33.1111V25.3333V17.5555" fill="#BDBDBD" />
+          <path
+            d="M10.8889 33.1111V25.3333V17.5555"
+            stroke="white"
+            stroke-width="2.5"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          />
+          <path
+            d="M19.7778 33.1111V25.8889ZM19.7778 17.5555V25.8889ZM19.7778 25.8889C19.7778 17.5555 33.1111 17.5555 33.1111 25.8889V33.1111"
+            fill="#BDBDBD"
+          />
+          <path
+            d="M19.7778 33.1111V25.8889M19.7778 25.8889V17.5555M19.7778 25.8889C19.7778 17.5555 33.1111 17.5555 33.1111 25.8889V33.1111"
+            stroke="white"
+            stroke-width="2.5"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          />
+          <path d="M10.8889 10.9111L10.9111 10.8864Z" fill="#BDBDBD" />
+          <path
+            d="M10.8889 10.9111L10.9111 10.8864"
+            stroke="white"
+            stroke-width="2.5"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          />
+        </svg>
+      </a>
+    </div>
+  </div>
+</section>
 
 {%endblock%}

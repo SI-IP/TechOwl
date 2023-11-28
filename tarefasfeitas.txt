@@ -1,7 +1,8 @@
-glossário
 testes
 css tarefas
 css about
 colocar o estilo dos termos no glossário em uppercase
 index
 trocar ícone de seta por estrela
+ajeitar a responsividade do index, do pop-up de editar
+glossário

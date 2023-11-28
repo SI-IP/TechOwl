@@ -2,7 +2,7 @@
 
 Esse projeto foi desenvolvido para a obtenção da nota final de Introdução a Programação do curso de Sistemas para Internet na Uniesp, ministrada pelo prof. Messias Batista. Grupo composto por Ana Clara Barros, Clara Ferraz e Guilherme Medeiros.
 
-## Table of contents
+## Sumário
 
 - [Sobre o projeto](#sobre-o-projeto)
   - [Contexto](#contexto)

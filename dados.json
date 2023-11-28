@@ -6,8 +6,8 @@
     "Método": "Uma função que é definida dentro do corpo de uma classe. Se chamada como um atributo de uma instância daquela classe, o método receberá a instância do objeto como seu primeiro argumento (que comumente é chamado de self).",
     "Responsividade": "Responsividade é um conceito de web design que envolve criar uma experiência de usuário consistente, que se adapta a qualquer tipo de tela e dispositivo.",
     "Scrum": "Framework para gestão e planejamento de produtos e projetos.",
-    "Java": "Uma linguagem de Programação",
+    "Java": "Linguagem de programação do cão",
     "Ambiente virtual": "Um ambiente de execução isolado que permite usuários e aplicações instalarem e atualizarem pacotes Python sem interferir no comportamento de outras aplicações Python em execução no mesmo sistema.",
-    "Algoritmo": "Conjunto de regras e procedimentos lógicos perfeitamente definidos que levam à solução de um problema em um número finito de etapas.",
-    "CSS": "\"Cascading Style Sheets\" é uma linguagem do tipo \"folha de estilo\" utilizada para definir como documentos HTML são exibidos para os usuários. Com o CSS, é possível modificar os aspectos visuais de um site, incluindo fontes, cores e planos de fundo."
+    "CSS": "\"Cascading Style Sheets\" é uma linguagem do tipo \"folha de estilo\" utilizada para definir como documentos HTML são exibidos para os usuários. Com o CSS, é possível modificar os aspectos visuais de um site, incluindo fontes, cores e planos de fundo.",
+    "Algoritmo": "Conjunto de regras e procedimentos lógicos perfeitamente definidos que levam à solução de um problema em um número finito de etapas."
 }

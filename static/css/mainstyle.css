@@ -2,7 +2,6 @@
 
 :root {
   --cor-principal: #338b85;
-  /* --turquesa-escuro: rgb(0, 89, 85); antigo do zap */
   --turquesa-escuro: rgb(0, 86, 95);
   --turquesa-claro: #9ce0db;
   --turquesa-bg: #f3fcfb;
@@ -196,6 +195,7 @@ main {
 
 .abc {
   text-transform: uppercase;
+  text-align: center;
   padding: 7px;
   color: var(--turquesa-escuro);
   font-size: 25px;
@@ -271,7 +271,6 @@ main {
 .glossario h2 {
   color: var(--turquesa-escuro);
   text-transform: uppercase;
-
 }
 
 .glossario-botoes {
@@ -446,6 +445,8 @@ main {
   filter: opacity(0.6);
 }
 
+/* POP-UP TAREFAS */
+
 .popup-bg {
   display: none;
   position: fixed;
@@ -503,27 +504,48 @@ main {
 
 .sobre {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: 1fr;
   gap: 20px;
   justify-items: center;
-  justify-content: center;
 }
 
 .card {
-  justify-self: stretch;
-  width: 250px;
   border: 1px solid var(--cinza-claro);
   border-radius: 20px;
   padding: 10px;
   box-shadow: 3px 3px 10px 2px var(--sombra);
-  font-size: 0.75em;
-  display: grid;
-  grid-template-rows: [foto] 245px [bio] 205px [links] 60px [fim]5px;
+  font-size: 1em;
+  /* Pra quando as telas forem menores que 768px: */
+  display: flex;
+  flex-direction: column;
+}
+
+
+@media screen and (min-width: 768px) {
+  .sobre {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .card {
+    display: grid;
+    justify-self: stretch;
+    grid-template-rows: [foto] auto [bio] 1fr [links] 60px [fim] 5px;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .sobre {
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+  }
 }
 
 .card img {
-  width: 230px;
-  border-radius: 300px;
+  width: 100%;
+  height: auto;
+  /* Isso aqui força a imagem a manter a proporção */
+  max-width: 250px;
+  border-radius: 100%;
+  margin: 0 auto 10px auto;
 }
 
 .card h4 {

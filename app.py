@@ -9,29 +9,30 @@ os.environ["FLASK_DEBUG"] = "True"
 app.debug = os.environ.get("FLASK_DEBUG") == "True"
 
 
-def carregarGlossario():
-    # r significa read
-    with open("dados.json", "r", encoding="utf-8") as db:
+def carregarGlossario(): # carrega o arquivo no app
+    with open("dados.json", "r", encoding="utf-8") as db: # r = read
         conceitos = json.load(db)
     return conceitos
 
 
-def salvarGlossario(dicio):  # salva no arquivo
-    # w significa write
-    with open("dados.json", "w", encoding="utf-8") as db:
+def salvarGlossario(dicio):  # salva as mudanças no arquivo
+    # o parâmetro é a variável que enviará as mudanças
+    with open("dados.json", "w", encoding="utf-8") as db: # w = write
         json.dump(dicio, db, ensure_ascii=False, indent=4)
         # load para ler e dump para enviar
-        # ensure_ascii lê caracteres especiais
+        # ensure_ascii=False permite que caracteres especiais/acentuação sejam enviados para o arquivo
 
 
-def carregarTarefas(arquivo):  # Lê o arquivo
+def carregarTarefas(arquivo):  # lê o arquivo
     # arquivo como parâmetro é usado pois temos três arquivos de tarefas
     with open(arquivo, "r", encoding="utf-8") as db:
         tarefas = [linha.strip() for linha in db.readlines()]
+        # cada linha do arquivo será lida como um item da lista
     return tarefas
 
 
-def salvarTarefas(tarefas, arquivo):
+def salvarTarefas(tarefas, arquivo): # o primeiro parâmetro é a variável que enviará as mudanças
+    # o segunto parâmetro é o arquivo que receberá as mudanças
     with open(arquivo, "w", encoding="utf-8") as db:
         for tarefa in tarefas:
             db.write(tarefa + "\n")
@@ -54,32 +55,40 @@ def index():
 
 @app.route("/glossario", methods=["GET", "POST"])
 def glossario():
-    if request.method == "POST":
+    if request.method == "POST": # quando há adição de termos no glossário
         termo = request.form["termo"]
         definicao = request.form["definicao"]
-        termo = (
-            termo.capitalize().rstrip()
-        )  # para uniformizar os termos no arquivo e tirar o espaço no final
-        conceitos[termo] = definicao
+        termo = termo.capitalize().rstrip()
+        # para uniformizar os termos no arquivo e tirar o espaço no final
+        conceitos.setdefault(termo, definicao)
+        # setdefault adiciona termos mas não sobrepõe um termo que já existe no dicionário
         salvarGlossario(conceitos)
         return redirect("/glossario")
     else:
         pesquisa = request.args.get("pesquisar", "").lower()
-        # retorna no formato de dicionário e na pesquisa vão ser todos com letra minuscula
+        # request.args é um objeto do flask que pega o argumento da pesquisa e retorna num formato de dicionário
+        # o get pega o valor associado a chave ou retorna o segundo argumento nesse caso a str vazia ""
+        # "pesquisar" é o identificador da barra de pesquisa no html (name="pesquisar")
+        # o lower() foi usado para uniformizar a pesquisa em lowercase
         pesquisa = unidecode(pesquisa)
-        # ignora a acentuação (biblioteca do Python)
+        # unidecode é uma biblioteca do python que ignora a acentuação e caracteres especiais
         if pesquisa:
             pesquisado = {
                 termo: descricao
                 for termo, descricao in conceitos.items()
                 if pesquisa in unidecode(termo.lower())
+                # se houver pesquisa, a variável "pesquisado" retornará um dicionário com os termos em "conceitos" que correspondam ao que foi pesquisado
+                # os termos de "conceitos" são passados filtros para ignorar de acentuação, caracteres especiais e capitalização de letras
             }
         else:
-            pesquisado = conceitos
+            pesquisado = {} 
+            # a variável "pesquisado" precisa estar associada a um valor
+            # pode ser qualquer valor pois quando não há pesquisa ele não irá interferir
+            # esse valor é necessário para ele seja considerado como existente no render_template
 
     return render_template(
         "glossario.html",
-        glossario=sorted(conceitos.items()),  # ordem alfabética
+        glossario=sorted(conceitos.items()),  # sorted coloca o glossário em ordem alfabética
         pesquisado=pesquisado,
         pesquisa=pesquisa,
     )
@@ -88,8 +97,7 @@ def glossario():
 @app.route("/deletar/<string:termo>", methods=["GET", "POST"])
 def deletarTermo(termo):
     del conceitos[termo]
-    salvarGlossario(conceitos)
-    # para atualizar o arquivo
+    salvarGlossario(conceitos) # para atualizar o arquivo
     return redirect("/glossario")
 
 
@@ -103,11 +111,9 @@ def alterarTermo(termo):
     elif novoTermo == "":
         conceitos[termo] = novaDefinicao
     elif novaDefinicao == "":
-        conceitos.setdefault(novoTermo, conceitos.pop(termo))
-        # adiciona um novo termo e deleta o antigo
-        # setdefault define como será reconfigurada a chave
+        conceitos[novoTermo] = conceitos.pop(termo)
     else:
-        conceitos.setdefault(novoTermo, conceitos.pop(termo))
+        conceitos[novoTermo] = conceitos.pop(termo)
         conceitos[novoTermo] = novaDefinicao
     salvarGlossario(conceitos)
     return redirect("/glossario")
@@ -127,26 +133,22 @@ def tarefas():
             listaDeTarefas=listaDeTarefas,
             prioridades=prioridades,
             selecionadas=selecionadas,
-            # retorna para o jinja ler os termos e funções no HTML
         )
 
 
 @app.route("/priorizar/<int:indice>")
 def priorizar(indice):
     mover = listaDeTarefas.pop(indice)
+    prioridades.append(mover) # remove a tarefa de uma lista e coloca na outra
     salvarTarefas(listaDeTarefas, "tarefas.txt")
-    prioridades.append(mover)
     salvarTarefas(prioridades, "tarefaspriorizadas.txt")
     return redirect("/tarefas")
-
-
-# remove a tarefa de uma lista e coloca na outra
 
 
 @app.route("/retirar-prioridade/<int:indice>")
 def retirarPrioridade(indice):
     mover = prioridades.pop(indice)
-    listaDeTarefas.append(mover)
+    listaDeTarefas.append(mover) # remove a tarefa de uma lista e coloca na outra
     salvarTarefas(listaDeTarefas, "tarefas.txt")
     salvarTarefas(prioridades, "tarefaspriorizadas.txt")
     return redirect("/tarefas")
@@ -179,7 +181,7 @@ def checkboxP(indice):
 def deletarTarefa(indice):
     if listaDeTarefas[indice] in selecionadas:
         selecionadas.remove(listaDeTarefas[indice])
-        # usamos o remove pois não sabemos o índice na lista de tarefas feitas
+        # usamos o remove pois não se sabe o seu índice na lista de tarefas feitas
         salvarTarefas(selecionadas, "tarefasfeitas.txt")
     del listaDeTarefas[indice]  # aqui sabemos o índice
     salvarTarefas(listaDeTarefas, "tarefas.txt")

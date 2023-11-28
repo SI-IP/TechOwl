@@ -1,5 +1,7 @@
 /* modelo */
 
+@import url('https://fonts.googleapis.com/css2?family=Red+Hat+Display:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&display=swap');
+
 :root {
   --cor-principal: #338b85;
   --turquesa-escuro: rgb(0, 86, 95);
@@ -14,7 +16,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: "Poppins", sans-serif;
+  font-family: "Red Hat Display", sans-serif;
 }
 
 body {
@@ -26,6 +28,8 @@ body {
 a {
   text-decoration: none;
 }
+
+/* HEADER */
 
 .barra-menu {
   display: flex;
@@ -91,6 +95,73 @@ a {
   width: 70px;
 }
 
+.menuzinho {
+  cursor: pointer;
+  position: absolute;
+  font-size: 2.5rem;
+  color: white;
+  top: 30%;
+  right: 5%;
+  display: none;
+}
+
+#menu-drop {
+  display: none;
+}
+
+@media (max-width: 990px) {
+  .menuzinho {
+    display: inline-flex;
+  }
+
+  #menu-drop:checked ~ .menuzinho #icone-menu {
+    display: none;
+  }
+
+  #icone-fechar {
+    display: none;
+  }
+
+  #menu-drop:checked ~ .menuzinho #icone-fechar {
+    display: block;
+  }
+
+  .barra-menu nav {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    height: 0;
+    background: var(--turquesa-escuro);
+    transition: 0.3s ease;
+    overflow: hidden;
+  }
+
+  #menu-drop:checked ~ nav {
+    height: 19em;
+  }
+
+  .menu-lista {
+    flex-direction: column;
+    list-style: none;
+    padding-bottom: 3px;
+    right: 40%;
+    bottom: 90px;
+  }
+
+  .menu-links {
+    text-align: center;
+    top: 40px;
+  }
+
+  .menu-links:hover::after {
+    width: 80%;
+    left: 10%;
+  }
+}
+
+/* MAIN & FOOTER  */
+
 main {
   display: flex;
   flex-direction: column;
@@ -134,14 +205,13 @@ main {
 
 /* INDEX */
 
-
 .box-descricao {
   display: grid;
   grid-template-columns: 1fr 5fr;
   column-gap: 30px;
   align-items: center;
   border-radius: 30px;
-  box-shadow: 0px 4px 5px 0px rgba(0, 0, 0, 0.50);
+  box-shadow: 0px 4px 5px 0px rgba(0, 0, 0, 0.5);
   height: 190px;
   padding: 30px;
   margin: 20px auto;
@@ -155,7 +225,7 @@ main {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 5px
+  gap: 5px;
 }
 
 .botao-index h2 {
@@ -166,7 +236,7 @@ main {
 
 .botao-index img {
   margin-top: 10px;
-  width: 70px;
+  width: 60px;
   transition: all 300ms ease-in-out;
 }
 
@@ -176,7 +246,7 @@ main {
 }
 
 .botao-index img:hover {
-  opacity: 0.8;
+  opacity: 0.7;
 }
 
 .tech-span {
@@ -211,7 +281,7 @@ main {
   padding: 5px;
   border: 1px solid var(--cinza-escuro);
   border-radius: 15px;
-  box-shadow: 0px 2px 3px 0px rgba(0, 0, 0, 0.50);
+  box-shadow: 0px 2px 3px 0px rgba(0, 0, 0, 0.5);
   justify-self: end;
 }
 
@@ -247,7 +317,7 @@ main {
   padding: 0 10px;
   outline: none;
   border: 1px solid var(--cinza-escuro);
-  box-shadow: 0px 2px 3px 0px rgba(0, 0, 0, 0.50);
+  box-shadow: 0px 2px 3px 0px rgba(0, 0, 0, 0.5);
   border-radius: 20px;
 }
 
@@ -294,17 +364,16 @@ main {
 /* POPUP GLOSSARIO */
 
 .alterar-form {
-  width: 500px;
+  width: 80%;
   height: 40px;
   margin-bottom: 65px;
-
 }
 
 .alterar-form input {
   margin-bottom: 15px;
-  padding: 5px 7px;
+  padding: 5px 10px;
   border: 1px solid var(--cinza-escuro);
-  box-shadow: 0px 2px 3px 0px rgba(0, 0, 0, 0.50);
+  box-shadow: 0px 2px 3px 0px rgba(0, 0, 0, 0.5);
   border-radius: 15px;
   outline: none;
   align-self: center;
@@ -325,12 +394,13 @@ main {
   opacity: 0.7;
 }
 
-
 /* TAREFAS */
 
 .tarefas {
   display: flex;
   justify-content: center;
+  flex-wrap: wrap;
+  gap: 40px;
 }
 
 .tarefas ul {
@@ -338,7 +408,7 @@ main {
 }
 
 .tarefas .tarefa {
-  width: 300px;
+  width: 250px;
 }
 
 .okay {
@@ -377,10 +447,10 @@ main {
 
 #addtarefa {
   border: 1px solid var(--cinza-escuro);
-  box-shadow: 0px 2px 3px 0px rgba(0, 0, 0, 0.50);
+  box-shadow: 0px 2px 3px 0px rgba(0, 0, 0, 0.5);
   border-radius: 15px;
   margin: 20px 0 30px;
-  width: 345px;
+  width: 340px;
   height: 40px;
   display: inline-block;
 }
@@ -406,7 +476,7 @@ main {
 }
 
 .todo {
-  width: 430px;
+  width: 365px;
   height: fit-content;
   margin: 20px;
 }
@@ -416,8 +486,8 @@ main {
 }
 
 .prioridades {
-  width: 430px;
-  margin: 20px 70px 20px 20px;
+  width: 390px;
+  margin: 20px;
 }
 
 .prioridades ul {
@@ -425,7 +495,7 @@ main {
   padding: 20px 20px;
   border: 1px solid var(--cinza-escuro);
   border-radius: 20px;
-  box-shadow: 0px 3px 4px 0px rgba(0, 0, 0, 0.50);
+  box-shadow: 0px 3px 4px 0px rgba(0, 0, 0, 0.5);
 }
 
 .prioridades h2 {
@@ -445,7 +515,7 @@ main {
   filter: opacity(0.6);
 }
 
-/* POP-UP TAREFAS */
+/* POP-UP - AMBOS */
 
 .popup-bg {
   display: none;
@@ -470,7 +540,7 @@ main {
 
 .form-alterar {
   border: 1px solid var(--cinza-escuro);
-  box-shadow: 0px 2px 3px 0px rgba(0, 0, 0, 0.50);
+  box-shadow: 0px 2px 3px 0px rgba(0, 0, 0, 0.5);
   border-radius: 15px;
   margin: 10px 0;
   width: 345px;
@@ -486,18 +556,8 @@ main {
   width: 300px;
 }
 
-.form-alterar .salvar-btn {
-  margin: 15px 0;
-  border: none;
-  color: var(--cor-principal);
-  background-color: transparent;
-  cursor: pointer;
-  font-size: 1.1em;
-}
-
-.form-alterar .salvar-btn:hover {
-  color: var(--turquesa-escuro);
-  filter: none;
+.form-alterar button {
+  padding: 10px 0;
 }
 
 /* SOBRE */
@@ -519,7 +579,6 @@ main {
   display: flex;
   flex-direction: column;
 }
-
 
 @media screen and (min-width: 768px) {
   .sobre {

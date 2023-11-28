@@ -13,7 +13,6 @@
       href="{{ url_for('static', filename='imagens/coruja.png') }}"
       type="image/x-icon"
     />
-    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -32,9 +31,10 @@
       </div>
 
       <input type="checkbox" id="menu-drop">
-      <label for="menu-drop" class="menuzinho">
-        <i class='bx bx-menu' id="icone-menu"></i>
-        <i class='bx bx-x' id="icone-fechar"></i>
+      <label for="menu-drop" class="menu-label">
+        <div class="minimenu">
+          <span class="burger"></span>
+        </div>
       </label>
 
       <nav>

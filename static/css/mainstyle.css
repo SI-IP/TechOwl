@@ -95,35 +95,65 @@ a {
   width: 70px;
 }
 
-.menuzinho {
-  cursor: pointer;
-  position: absolute;
-  font-size: 2.5rem;
-  color: white;
-  top: 30%;
-  right: 5%;
-  display: none;
-}
-
 #menu-drop {
   display: none;
 }
 
+.minimenu {
+  position: fixed;
+  height: 60px;
+  width: 60px;
+  cursor: pointer;
+  right: 10%;
+  display: none;
+}
+
+.burger {
+  display: block;
+  position: relative;
+  background: white;
+  top: 65%;
+  width: 30px;
+  height: 2px;
+  transition: .5s ease-in-out;
+}
+
+.burger::before, .burger::after {
+  content: "";
+  position: absolute;
+  background-color: white;
+  display: block;
+  width: 100%;
+  height: 100%;
+  transition: .5s ease-in-out;
+}
+
+.burger::before {
+  top: -10px;
+}
+
+.burger::after {
+  bottom: -10px;
+}
+
 @media (max-width: 990px) {
-  .menuzinho {
+  .minimenu {
     display: inline-flex;
   }
 
-  #menu-drop:checked ~ .menuzinho #icone-menu {
-    display: none;
+  #menu-drop:checked ~ .menu-label .burger {
+    transform: rotate(45deg);
   }
 
-  #icone-fechar {
-    display: none;
+  #menu-drop:checked ~ .menu-label .burger::before {
+    transform: rotate(90deg);
+    top: 0;
+    height: 0;
   }
 
-  #menu-drop:checked ~ .menuzinho #icone-fechar {
-    display: block;
+  #menu-drop:checked ~ .menu-label .burger::after {
+    transform: rotate(90deg);
+    bottom: 0;
   }
 
   .barra-menu nav {
@@ -212,8 +242,8 @@ main {
   align-items: center;
   border-radius: 30px;
   box-shadow: 0px 4px 5px 0px rgba(0, 0, 0, 0.5);
-  height: 190px;
-  padding: 30px;
+  height: fit-content;
+  padding: 25px 30px;
   margin: 20px auto;
 }
 

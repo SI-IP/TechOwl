@@ -99,8 +99,12 @@ const proudOfThisFunc = () => {
 - Documentação do MDN
     - [Métodos HTTP](https://developer.mozilla.org/pt-BR/docs/Web/HTTP/Methods)
     - [Input: search](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/search)
-- [Unidecode](https://pypi.org/project/Unidecode/) - Biblioteca unidecode
-- [Boxicons](https://boxicons.com/usage) - Esse site oferece ícones diversos
+- [Unidecode](https://pypi.org/project/Unidecode/) - biblioteca unidecode
+- Tutoriais de responsividade de menu/navbar
+    - [Faire une Navbar Responsive en HTML & CSS](https://www.youtube.com/watch?v=HQopEEurQYE)
+    - [How to Create Responsive Navbar using HTML & CSS](https://www.youtube.com/watch?v=yE9DLIoDwCg&t=751s)
+    - [How to create a Responsive Navigation Bar](https://www.youtube.com/watch?v=U8smiWQ8Seg)
+    - [Criando um ícone menu hamburguer animado](https://www.youtube.com/watch?v=IGz4BI-aO_8)
 
 ## Autores
 

@@ -1,8 +1,0 @@
-testes
-css tarefas
-css about
-colocar o estilo dos termos no glossário em uppercase
-index
-trocar ícone de seta por estrela
-glossário
-ajeitar a responsividade do index, do pop-up de editar

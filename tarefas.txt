@@ -1,5 +1,0 @@
-glossário
-index
-css about
-css tarefas
-ajeitar a responsividade do index, do pop-up de editar

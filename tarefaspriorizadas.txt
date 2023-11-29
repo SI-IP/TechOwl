@@ -1,4 +1,0 @@
-testes
-colocar o estilo dos termos no glossário em uppercase
-Projeto Flask
-trocar ícone de seta por estrela

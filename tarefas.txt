@@ -2,5 +2,4 @@ glossário
 index
 css about
 css tarefas
-trocar ícone de seta por estrela
 ajeitar a responsividade do index, do pop-up de editar

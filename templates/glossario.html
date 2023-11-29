@@ -67,7 +67,7 @@
     {% if pesquisa %}
     <h2>Resultados para <span>"{{pesquisa}}"</span></h2>
     {% for termo, descricao in pesquisado.items() %}
-    <h2>{{termo}}</h2>
+    <h2 id="{{termo[0]|lower}}">{{termo}}</h2>
     <p>{{descricao}}</p>
 
     <div class="glossario-botoes">
@@ -113,7 +113,7 @@
     {% else %} 
     <div class="glossario">{% for termo, descricao in glossario %}
       <!-- glossario significa conceitos no app.py -->
-    <h2>{{termo}}</h2>
+    <h2 id="{{termo[0]|lower}}">{{termo}}</h2>
     <p>{{descricao}}</p>
 
     <div class="glossario-botoes">

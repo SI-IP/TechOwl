@@ -97,14 +97,19 @@ const proudOfThisFunc = () => {
     - [How to Create a Web Application in Python using Flask](https://www.youtube.com/watch?v=jQjjqEjZK58)
     - [Python Website Full Tutorial](https://www.youtube.com/watch?v=dam0GPOAvVI&t=3s)
 - Documentação do MDN
-    - [Métodos HTTP](https://developer.mozilla.org/pt-BR/docs/Web/HTTP/Methods)
+    - [Métodos HTTP](https://developer.mozilla.org/pt-BR/docs/Web/HTTP/Methods) - para uso do GET e POST no programa
     - [Input: search](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/search)
+    - [Conditional ternary operator](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Conditional_operator) - usado na confirmação de exclusão
 - [Unidecode](https://pypi.org/project/Unidecode/) - biblioteca unidecode
 - Tutoriais de responsividade de menu/navbar
     - [Faire une Navbar Responsive en HTML & CSS](https://www.youtube.com/watch?v=HQopEEurQYE)
     - [How to Create Responsive Navbar using HTML & CSS](https://www.youtube.com/watch?v=yE9DLIoDwCg&t=751s)
     - [How to create a Responsive Navigation Bar](https://www.youtube.com/watch?v=U8smiWQ8Seg)
     - [Criando um ícone menu hamburguer animado](https://www.youtube.com/watch?v=IGz4BI-aO_8)
+- Outras documentações
+    - [W3Schools - método confirm()](https://www.w3schools.com/jsref/met_win_confirm.asp) - usado na confirmação de exclusão
+    - [W3Schools - Window object](https://www.w3schools.com/jsref/obj_window.asp) - usado no popup
+    - [Freecodecamp - forEach()](https://www.freecodecamp.org/portuguese/news/foreach-em-javascript-como-percorrer-um-array-em-js/) - usado no popup
 
 ## Autores
 
